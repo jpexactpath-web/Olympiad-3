@@ -23,7 +23,7 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     }
 
     body {
@@ -130,6 +130,7 @@
     .q-text {
       margin-bottom: 1rem;
       font-weight: 500;
+      white-space: pre-line;
     }
 
     .options-group {
@@ -147,7 +148,6 @@
       border-radius: 6px;
       cursor: pointer;
       font-size: 0.95rem;
-      transition: background 0.15s, border-color 0.15s;
     }
 
     .option-label:hover {
@@ -193,7 +193,6 @@
       font-weight: 600;
       border-radius: 6px;
       cursor: pointer;
-      transition: background 0.2s;
     }
 
     .btn-submit:hover {
@@ -251,7 +250,6 @@
 
   <script>
     const questions = [
-      // Section 1: Word and Structure Knowledge
       {
         id: 1, section: "Section 1: Word and Structure Knowledge",
         q: "Look at those dark clouds! It _______ rain this afternoon.",
@@ -324,14 +322,14 @@
       },
       {
         id: 11, section: "Section 1: Word and Structure Knowledge",
-        q: "Choose the part of the sentence with an error: 'The children (A) / are playing happily (B) / since two hours (C) / in the garden. (D)'",
+        q: "Choose the part of the sentence with an error:\nThe children (A) / are playing happily (B) / since two hours (C) / in the garden. (D)",
         options: ["The children", "are playing happily", "since two hours", "in the garden"],
         answer: 2, weight: 1,
         exp: "'Two hours' represents a duration, so it requires 'for two hours', not 'since'."
       },
       {
         id: 12, section: "Section 1: Word and Structure Knowledge",
-        q: "Choose the part of the sentence with an error: 'She do not know (A) / how to solve (B) / the difficult math problem (C) / on the blackboard. (D)'",
+        q: "Choose the part of the sentence with an error:\nShe do not know (A) / how to solve (B) / the difficult math problem (C) / on the blackboard. (D)",
         options: ["She do not know", "how to solve", "the difficult math problem", "on the blackboard"],
         answer: 0, weight: 1,
         exp: "Singular subject 'She' requires 'does not know'."
@@ -392,8 +390,6 @@
         answer: 0, weight: 1,
         exp: "The collective noun for wolves is a 'pack'."
       },
-
-      // Section 2: Reading
       {
         id: 21, section: "Section 2: Reading",
         passage: "Honeybees are some of the hardest-working insects on Earth. A single colony can contain up to 60,000 bees, all working together to keep the hive alive. Inside the hive, every bee has a specific job. The queen bee lays up to 2,000 eggs each day. Male bees, called drones, do not forage for food or protect the hive. Worker bees, which are all female, do all the hard work: cleaning the hive, nursing baby bees, building honeycombs from wax, and flying out to gather nectar and pollen from flowers. When a worker bee finds a rich source of nectar, it returns to the hive and performs a special dance called the 'waggle dance.' This movement tells the other bees the exact direction and distance of the flowers relative to the sun. Without bees, many fruits, nuts, and vegetables would not grow, because bees are the primary pollinators for one-third of the food humans consume.",
@@ -430,45 +426,41 @@
         answer: 0, weight: 1,
         exp: "'Forage' specifically means searching for food."
       },
-
-      // Section 3: Spoken and Written Expression
       {
         id: 26, section: "Section 3: Spoken and Written Expression",
-        q: "Teacher: 'Who left the classroom door open during the storm?'\nKunal: '_______, ma'am. I slipped out to wash my hands and forgot to shut it.'",
+        q: "Teacher: \"Who left the classroom door open during the storm?\"\nKunal: \"_______, ma'am. I slipped out to wash my hands and forgot to shut it.\"",
         options: ["You are welcome", "I apologize", "Never mind", "It does not matter"],
         answer: 1, weight: 1,
         exp: "Admitting a mistake to a teacher politely calls for 'I apologize'."
       },
       {
         id: 27, section: "Section 3: Spoken and Written Expression",
-        q: "Asha: 'Would you like some chocolate cake or fruit salad?'\nDiya: '_______, please. I am trying to eat healthier snacks this term.'",
+        q: "Asha: \"Would you like some chocolate cake or fruit salad?\"\nDiya: \"_______, please. I am trying to eat healthier snacks this term.\"",
         options: ["Neither of them", "The fruit salad", "I dislike fruit", "Give me both"],
         answer: 1, weight: 1,
         exp: "Diya chooses 'The fruit salad' because she wants a healthier option."
       },
       {
         id: 28, section: "Section 3: Spoken and Written Expression",
-        q: "Grandmother: 'Could you help me carry this basket to the kitchen?'\nKabir: '_______, Grandma. Let me take it right now.'",
+        q: "Grandmother: \"Could you help me carry this basket to the kitchen?\"\nKabir: \"_______, Grandma. Let me take it right now.\"",
         options: ["Certainly", "Rarely", "Unlikely", "Probably not"],
         answer: 0, weight: 1,
         exp: "'Certainly' is a polite affirmative response to an elder's request."
       },
       {
         id: 29, section: "Section 3: Spoken and Written Expression",
-        q: "Ritu: 'I won first place in the inter-school storytelling competition!'\nSimran: '_______! That is fantastic news!'",
+        q: "Ritu: \"I won first place in the inter-school storytelling competition!\"\nSimran: \"_______! That is fantastic news!\"",
         options: ["Better luck next time", "Hearty congratulations", "Please excuse me", "Pardon me"],
         answer: 1, weight: 1,
         exp: "'Hearty congratulations' is the appropriate celebration of an achievement."
       },
       {
         id: 30, section: "Section 3: Spoken and Written Expression",
-        q: "Shopkeeper: 'How may I help you today, young man?'\nCustomer: '_______ looking for a box of waterproof oil pastels.'",
+        q: "Shopkeeper: \"How may I help you today, young man?\"\nCustomer: \"_______ looking for a box of waterproof oil pastels.\"",
         options: ["I was", "I am", "I had", "I were"],
         answer: 1, weight: 1,
         exp: "Present continuous tense 'I am looking for' matches the current dialogue."
       },
-
-      // Section 4: Achievers Section
       {
         id: 31, section: "Section 4: Achievers Section (HOTS)",
         q: "The cat jumped _______ the kitchen table and dashed straight _______ the garden through the open window.",
@@ -478,14 +470,14 @@
       },
       {
         id: 32, section: "Section 4: Achievers Section (HOTS)",
-        q: "Choose the correct idiom: 'To score top marks in his semester exam, Tarun had to _______.'",
+        q: "Choose the correct idiom: \"To score top marks in his semester exam, Tarun had to _______.\"",
         options: ["bite the bullet", "burn the midnight oil", "spill the beans", "hit the nail on the head"],
         answer: 1, weight: 2,
         exp: "'Burn the midnight oil' means to work or study late into the night."
       },
       {
         id: 33, section: "Section 4: Achievers Section (HOTS)",
-        q: "Choose the correct indirect speech: Father said to me, 'Wash your hands before dinner.'",
+        q: "Choose the correct indirect speech: Father said to me, \"Wash your hands before dinner.\"",
         options: [
           "Father told me to wash my hands before dinner.",
           "Father asked me that I wash hands before dinner.",
@@ -511,90 +503,133 @@
       }
     ];
 
-    // Render questions
-    const container = document.getElementById("quiz-container");
-    let currentSection = "";
+    document.addEventListener("DOMContentLoaded", function () {
+      const container = document.getElementById("quiz-container");
+      let currentSection = "";
 
-    questions.forEach((item, index) => {
-      if (item.section !== currentSection) {
-        currentSection = item.section;
-        const banner = document.createElement("div");
-        banner.className = "section-banner";
-        banner.innerText = currentSection;
-        container.appendChild(banner);
-      }
+      questions.forEach((item) => {
+        if (item.section !== currentSection) {
+          currentSection = item.section;
+          const banner = document.createElement("div");
+          banner.className = "section-banner";
+          banner.textContent = currentSection;
+          container.appendChild(banner);
+        }
 
-      if (item.passage) {
-        const passageBox = document.createElement("div");
-        passageBox.className = "passage-card";
-        passageBox.innerHTML = `<strong>Reading Passage:</strong><br>${item.passage}`; container.appendChild(passageBox); }  const card = document.createElement("div"); card.className = "question-card"; card.id = `q-card-${item.id}`;
+        if (item.passage) {
+          const passageBox = document.createElement("div");
+          passageBox.className = "passage-card";
+          passageBox.innerHTML = "<strong>Reading Passage:</strong><br>" + item.passage;
+          container.appendChild(passageBox);
+        }
 
-      const optionsHtml = item.options.map((opt, optIndex) => `
-        <label class="option-label" id="label-${item.id}-${optIndex}">
-          <input type="radio" name="q${item.id}" value="${optIndex}" />
-          <span>(${String.fromCharCode(65 + optIndex)})${opt}</span>
-        </label>
-      `).join("");
+        const card = document.createElement("div");
+        card.className = "question-card";
+        card.id = "q-card-" + item.id;
 
-      card.innerHTML = `
-        <div class="q-header">
-          <span class="q-number">Question ${item.id}</span>
-          <span class="q-points">${item.weight} Mark${item.weight > 1 ? 's' : ''}</span>
-        </div>
-        <div class="q-text">${item.q.replace(/\\n/g, '<br>')}</div>
-        <div class="options-group">${optionsHtml}</div>
-        <div class="explanation-box" id="exp-${item.id}"></div>
-      `;
+        const optionsHtml = item.options.map((opt, optIndex) => `
+          <label class="option-label" id="label-${item.id}-${optIndex}">
+            <input type="radio" name="q${item.id}" value="${optIndex}" />
+            <span>(${String.fromCharCode(65 + optIndex)}) ${opt}</span>
+          </label>
+        `).join("");
 
-      container.appendChild(card);
-    });
+        card.innerHTML = `
+          <div class="q-header">
+            <span class="q-number">Question ${item.id}</span>
+            <span class="q-points">${item.weight} Mark${item.weight > 1 ? 's' : ''}</span>
+          </div>
+          <div class="q-text">${item.q}</div>
+          <div class="options-group">${optionsHtml}</div>
+          <div class="explanation-box" id="exp-${item.id}"></div>
+        `;
 
-    // 60-Minute Countdown Timer
-    let totalSeconds = 60 * 60;
-    const timerEl = document.getElementById("timer");
+        container.appendChild(card);
+      });
 
-    const timerInterval = setInterval(() => {
-      totalSeconds--;
-      const minutes = Math.floor(totalSeconds / 60);
-      const seconds = totalSeconds % 60;
-      timerEl.innerText = `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;  if (totalSeconds <= 0) { clearInterval(timerInterval); submitQuiz(); } }, 1000);  // Form submission const form = document.getElementById("quiz-form"); form.addEventListener("submit", (e) => { e.preventDefault(); clearInterval(timerInterval); submitQuiz(); });  function submitQuiz() { let earnedScore = 0; let totalScore = 0;  questions.forEach((item) => { totalScore += item.weight; const selected = document.querySelector(`input[name="q${item.id}"]:checked`);
-        const expBox = document.getElementById(`exp-${item.id}`); expBox.style.display = "block";  if (selected) { const answerVal = parseInt(selected.value, 10); const chosenLabel = document.getElementById(`label-${item.id}-${answerVal}`);  if (answerVal === item.answer) { earnedScore += item.weight; chosenLabel.style.borderColor = "var(--success)"; chosenLabel.style.backgroundColor = "var(--success-bg)"; expBox.className = "explanation-box correct"; expBox.innerHTML = `<strong>Correct!</strong> ${item.exp}`;
+      // Timer
+      let totalSeconds = 60 * 60;
+      const timerEl = document.getElementById("timer");
+
+      const timerInterval = setInterval(() => {
+        totalSeconds--;
+        const minutes = Math.floor(totalSeconds / 60);
+        const seconds = totalSeconds % 60;
+        timerEl.innerText = `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+
+        if (totalSeconds <= 0) {
+          clearInterval(timerInterval);
+          submitQuiz();
+        }
+      }, 1000);
+
+      // Submission
+      const form = document.getElementById("quiz-form");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        clearInterval(timerInterval);
+        submitQuiz();
+      });
+
+      function submitQuiz() {
+        let earnedScore = 0;
+        let totalScore = 0;
+
+        questions.forEach((item) => {
+          totalScore += item.weight;
+          const selected = document.querySelector(`input[name="q${item.id}"]:checked`);
+          const expBox = document.getElementById(`exp-${item.id}`);
+          expBox.style.display = "block";
+
+          if (selected) {
+            const answerVal = parseInt(selected.value, 10);
+            const chosenLabel = document.getElementById(`label-${item.id}-${answerVal}`);
+
+            if (answerVal === item.answer) {
+              earnedScore += item.weight;
+              chosenLabel.style.borderColor = "var(--success)";
+              chosenLabel.style.backgroundColor = "var(--success-bg)";
+              expBox.className = "explanation-box correct";
+              expBox.innerHTML = `<strong>Correct!</strong> ${item.exp}`;
+            } else {
+              chosenLabel.style.borderColor = "var(--danger)";
+              chosenLabel.style.backgroundColor = "var(--danger-bg)";
+              const correctLabel = document.getElementById(`label-${item.id}-${item.answer}`);
+              correctLabel.style.borderColor = "var(--success)";
+              expBox.className = "explanation-box wrong";
+              expBox.innerHTML = `<strong>Incorrect.</strong> Correct answer: (${String.fromCharCode(65 + item.answer)}). ${item.exp}`;
+            }
           } else {
-            chosenLabel.style.borderColor = "var(--danger)";
-            chosenLabel.style.backgroundColor = "var(--danger-bg)";
             const correctLabel = document.getElementById(`label-${item.id}-${item.answer}`);
             correctLabel.style.borderColor = "var(--success)";
             expBox.className = "explanation-box wrong";
-            expBox.innerHTML = `<strong>Incorrect.</strong> Correct answer: (${String.fromCharCode(65 + item.answer)}).${item.exp}`;
+            expBox.innerHTML = `<strong>Unattempted.</strong> Correct answer: (${String.fromCharCode(65 + item.answer)}). ${item.exp}`;
           }
+
+          document.querySelectorAll(`input[name="q${item.id}"]`).forEach(input => input.disabled = true);
+        });
+
+        document.getElementById("submit-btn").disabled = true;
+        document.getElementById("submit-btn").style.opacity = "0.5";
+
+        const modal = document.getElementById("results-modal");
+        const scoreText = document.getElementById("score-text");
+        const benchText = document.getElementById("benchmark-text");
+
+        modal.style.display = "block";
+        scoreText.innerText = `${earnedScore} / ${totalScore} Marks`;
+
+        if (earnedScore >= 36) {
+          benchText.innerText = "Performance tier: International / Zonal Rank Contender.";
+        } else if (earnedScore >= 30) {
+          benchText.innerText = "Performance tier: School Topper / Level 2 Qualifier Candidate.";
         } else {
-          const correctLabel = document.getElementById(`label-${item.id}-${item.answer}`);
-          correctLabel.style.borderColor = "var(--success)";
-          expBox.className = "explanation-box wrong";
-          expBox.innerHTML = `<strong>Unattempted.</strong> Correct answer: (${String.fromCharCode(65 + item.answer)}). ${item.exp}`; }  // Disable options document.querySelectorAll(`input[name="q${item.id}"]`).forEach(input => input.disabled = true);
-      });
+          benchText.innerText = "Performance tier: Needs foundational drill work on grammar and reading.";
+        }
 
-      document.getElementById("submit-btn").disabled = true;
-      document.getElementById("submit-btn").style.opacity = "0.5";
-
-      // Show results modal
-      const modal = document.getElementById("results-modal");
-      const scoreText = document.getElementById("score-text");
-      const benchText = document.getElementById("benchmark-text");
-
-      modal.style.display = "block";
-      scoreText.innerText = `${earnedScore} /${totalScore} Marks`;
-
-      if (earnedScore >= 36) {
-        benchText.innerText = "Performance tier: International / Zonal Rank Contender.";
-      } else if (earnedScore >= 30) {
-        benchText.innerText = "Performance tier: School Topper / Level 2 Qualifier Candidate.";
-      } else {
-        benchText.innerText = "Performance tier: Needs foundational drill work on grammar and reading.";
+        window.scrollTo({ top: 0, behavior: "smooth" });
       }
-
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
+    });
   </script>
 </body>
 </html>
